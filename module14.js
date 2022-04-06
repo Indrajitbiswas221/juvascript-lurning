@@ -146,14 +146,14 @@
 // console.log(result);
 
 //calculate prime number
-function primeNumber(n){
-    for(i=2; i<n; i++){
-        if(n%i==0){
-            return 'your Number not a prime number';
-        }
-        return 'your number is a prime number';
-    }
-}
+// function primeNumber(n){
+//     for(i=2; i<n; i++){
+//         if(n%i==0){
+//             return 'your Number not a prime number';
+//         }
+//         return 'your number is a prime number';
+//     }
+// }
 
-var result=primeNumber(7);
-console.log(result);
+// var result=primeNumber(7);
+// console.log(result);
