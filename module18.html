@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juvascript dom event</title>
+</head>
+<body>
+    <div>
+    <article>
+        <h1 id="first">This is heading Tag</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur dignissimos eos voluptatem quos labore cum! Mollitia rerum impedit inventore nihil, minima, eos aperiam suscipit aspernatur consequuntur sunt modi. Sapiente laboriosam voluptates veritatis odit itaque reprehenderit doloribus.</p>
+    </article>
+    <article>
+        <h1 class="second">This is heading Tag</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur dignissimos eos voluptatem quos labore cum! Mollitia rerum impedit inventore nihil, minima, eos aperiam suscipit aspernatur consequuntur sunt modi. Sapiente laboriosam voluptates veritatis odit itaque reprehenderit doloribus.</p>
+    </article>
+    <article id="third">
+        <h1>This is heading Tag</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur dignissimos eos voluptatem quos labore cum! Mollitia rerum impedit inventore nihil, minima, eos aperiam suscipit aspernatur consequuntur sunt modi. Sapiente laboriosam voluptates veritatis odit itaque reprehenderit doloribus.</p>
+    </article>
+    </div>
+    <div class="listite">
+        <ul id="gift-item">
+            <li>this is list item</li>
+            <li>this is list item</li>
+            <li>this is list item</li>
+            <li>this is list item</li>
+            <li>this is list item</li>
+        </ul>
+    </div>
+
+   <script>
+       document.getElementById('first').style.background='yellow';
+       var pragraph=document.getElementsByTagName('p');
+       for(i=0; i<pragraph.length; i++){
+           var element=pragraph[i];
+           element.style.background='green';
+       }
+       var addtittel=document.querySelector('h1.second').setAttribute('title', 'This is second tittle');
+
+       const thirdarticle=document.getElementById('third');
+       const newPragraph=document.createElement('p');
+       newPragraph.innerHTML='this is aded by juvascript';
+       thirdarticle.appendChild(newPragraph);
+
+       const ul =document.getElementById('gift-item');
+       const li=document.createElement('li');
+       li.innerHTML='brand new gift item';
+       ul.appendChild(li);
+            
+       console.log(document.getElementById('gift-item').childNodes);
+       console.log(document.getElementById('gift-item').parentNode);
+   </script> 
+</body>
+</html>
