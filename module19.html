@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event managemant company</title>
+</head>
+<body>
+    <div class="section">
+        <h1 onclick="alert('45')">This is heading tag</h1>
+        <button onclick="juvascriptEvent()">Click me</button>
+        <button onmouseover="juvascriptEvent()">Click me</button>
+        <button id="thirditem" >Click me</button>
+        <button id="fourthitem" >Click me</button>
+        <button id="fifthitem" >Click me</button>
+
+    </div>
+    <div id="container">
+        <h1 >My list</h1>
+        <ul>
+            <li id="first">list item-1</li>
+            <li id="second">list item-2</li>
+            <li id="third">list item-3</li>
+            <li id="fourth">list item-4</li>
+        </ul>
+        
+    </div>
+
+    <div id="container1">
+        <ul id="list">
+            <li id="first1">india</li>
+            <li id="second1">bangladesh</li>
+            <li id="third1">srilanka</li>
+            <li id="fourth1">vutan</li>
+        </ul>
+        <button id="secondbutton">remove item</button>
+    </div>
+
+
+    <script>
+        //button juvascript
+        function juvascriptEvent(){
+            console.log('some one click me');
+        }
+        function handelClick(){
+            document.body.style.background='cyan';
+        }
+        var thirditem=document.getElementById("thirditem");
+        thirditem.onclick=handelClick;
+
+        function handelClick2(){
+            document.body.style.background='green';
+        }
+
+        var fourthitem=document.getElementById('fourthitem');
+        fourthitem.addEventListener('click', handelClick2 );
+
+        
+
+        document.getElementById('fifthitem').addEventListener('click', function(){
+            document.body.style.color='red';
+        });
+        //list item juva script
+        document.getElementById('first').addEventListener('click', function(event){
+            console.log('on person click');
+            event.stopPropagation();
+        });
+        document.getElementById('second').addEventListener('click', function(event){
+            console.log('on person click1');
+        });
+        document.getElementById('container').addEventListener('click', function(event){
+            console.log('on person click2');
+        });
+
+        //remove child juva script
+        document.getElementById('list').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        });
+
+
+        document.getElementById('secondbutton').addEventListener('click', function(event){
+            var parentitem=document.getElementById('list');
+            var listitem=document.createElement('li');
+            listitem.innerHTML='brandnew item';
+            parentitem.appendChild(listitem);
+        });
+    </script>
+</body>
+</html>
